@@ -5,7 +5,7 @@ locals {
     {
         lb_type = "nlb"
         enable_ssl_passthrough = var.enable_ssl_passthrough
-        default_certificate = "${var.default_certificate == null ? "" : var.default_certificate}"
+        default_certificate = var.default_certificate == null ? "" : var.default_certificate
         ingress_class = var.ingress_class
         autoscaling_conf = yamlencode(var.autoscaling_configuration)
         enable_internal_lb = var.enable_internal_lb
